@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Events - SmartEvent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg glass-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">SmartEvent</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="participants.html">Participants</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-container glass-panel my-5">
+    <div class="text-center mb-5">
+      <h2 class="mb-2">Event Management</h2>
+      <p style="color: #9ca3af;">Create and manage your upcoming events</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 mb-4">
+        <div class="p-4" style="background: rgba(0,0,0,0.2); border-radius: 16px;">
+          <h4 class="mb-4">Create New Event</h4>
+          <input id="name" class="form-control mb-3" placeholder="Event Name" />
+          <input id="date" type="date" class="form-control mb-3" />
+          <input id="location" class="form-control mb-3" placeholder="Location" />
+          <textarea id="description" class="form-control mb-4" placeholder="Description" rows="3"></textarea>
+          <button id="addEventBtn" class="btn btn-primary w-100" onclick="addEvent()">Add Event</button>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="p-4" style="background: rgba(0,0,0,0.2); border-radius: 16px;">
+          <h4 class="mb-4">Upcoming Events</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody id="eventTable">
+                <tr><td colspan="4" class="text-center py-4">Loading events...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
+  <script src="ui.js"></script>
+  <script src="events.js"></script>
+</body>
+</html>
